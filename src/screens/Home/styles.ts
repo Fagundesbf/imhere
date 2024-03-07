@@ -16,5 +16,35 @@ export const styles = StyleSheet.create({
     eventDate:{
       color:'#6B6B6B',
       fontSize:16   
+    },
+    input:{
+      backgroundColor: '#1F1E25',
+      height: 56,
+      borderRadius: 5,
+      color: '#FFF',
+      paddingLeft: 16,
+      fontSize: 16,
+      flex:1,
+      marginRight: 16
+    },
+    form:{
+      width:'100%',
+      flexDirection: 'row',
+      marginTop:36,
+      marginRight: 42,
+      marginBottom: 36
+    },
+    button: { 
+      backgroundColor:'#31cf67',
+      width:56,
+      height:56,
+      borderRadius: 5,
+      alignItems: "center",
+      justifyContent:"center"
+    },
+    buttonText:{
+      fontSize:24,
+      color: '#fff',
+    
     }
   });
