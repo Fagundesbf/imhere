@@ -54,5 +54,70 @@ seja focado em apenas uma funcionalidade ou um conjunto de funcionalidades."
     -Padronização do Projeto.
 
       
- - Criando Componente de Participant 
+ - Criando Componente de Participant
+ - Entendendo o TypeScript
+ - Utilizando Propriedades no Componente
+ - Função Remover
+ - Ativando Rolagem na tela
+ - Lista de Participantes
+ - Entendendo ScrollView e FlatList
+      **ScrowView**
+
+      "Renderiza todos os elementos da listagem e perde perfonmance."
+
+      *ScrowView renderiza todos os seus componentes filhos de reação de uma só vez, mas isso tem uma desvantagem de desempenho."
+
+       <ScrollView 
+         showsVerticalScrollIndicator={false}>
+              {
+                participants.map(participant=>(
+                  <Participant 
+                    name={participant}
+                    key={participant} 
+                    onRemove={()=>handleParticipantRemove(participant)}
+                    />
+                ))
+              }
+        </ScrollView> 
+   
+
+      **FlatList**
+
+      "Carrega lista, porem apenas os elementos que estão na visão da tela, ganho de performance e possui uma margin para o proximo elemento."
+      *FlatList renderiza itens lentamente, quando eles estão prestes a aparecer, e remove itens que rolam para fora da tela para economizar memória e tempo de processamento.*
+ 
+          <FlatList
+           data={participants}
+           keyExtractor={item => item}
+           showsVerticalScrollIndicator={false}
+           renderItem={({item})=>(
+                <Participant 
+                    name={item}
+                    key={item} 
+                     onRemove={()=>handleParticipantRemove(item)}
+          />
+          )}
+          ListEmptyComponent={()=>(
+             <Text style={styles.listEmptyText}>
+               Niguém chegou no evento ainda? Adicione participantes a sua lista de presença!
+             </Text>
+            
+          )}
+      />
+   
+-Estilizando a StatusBar
+-Exibindo Alertas
+
+Alert.alert(
+            "Participante existe!", 
+            "Já existe um participante na lista com esse nome."
+          )
+
+   Alert.alert(
+      "Remover",
+      `Remover o participante ${name}?`,
+       [{text:"Sim", onPress: () => { Alert.alert("Deletado!")}},{text:"Não",style:"cancel"}] 
+      );
+-Quiz
+   
    
