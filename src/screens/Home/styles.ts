@@ -5,13 +5,14 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#131016',
-      padding: 24
+      padding: 24,
+      
     },
     eventName: {
       color: '#FDFCFE',
       fontSize:24,
       fontWeight:'bold',
-      marginTop: 16,
+      marginTop: 60,
     },
     eventDate:{
       color:'#6B6B6B',
@@ -46,5 +47,10 @@ export const styles = StyleSheet.create({
       fontSize:24,
       color: '#fff',
     
+    },
+    listEmptyText: {
+      color:"#fff",
+      textAlign: "center",
+      fontSize: 14
     }
   });
